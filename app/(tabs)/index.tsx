@@ -1,31 +1,30 @@
-import { StyleSheet } from 'react-native';
+import { Link, router } from "expo-router";
+import React from "react";
+import { Pressable, Text, View } from "react-native";
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
-
-export default function TabOneScreen() {
+const HomePage = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>Home Page</Text>
+
+      <Link href="/users/1">Go to user 1</Link>
+
+      <Pressable onPress={() => router.push("/users/2")}>
+        <Text>Go to user 2</Text>
+      </Pressable>
+
+      <Pressable
+        onPress={() =>
+          router.push({
+            pathname: "/users/[id]",
+            params: { id: 3 },
+          })
+        }
+      >
+        <Text>Go to user 3</Text>
+      </Pressable>
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+export default HomePage;
