@@ -8,7 +8,7 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="index"
         options={{
-          headerTitle: "Home",
+          headerTitle: "Android Home",
           tabBarIcon: () => <Ionicons name="home" size={20} />,
         }}
       />
