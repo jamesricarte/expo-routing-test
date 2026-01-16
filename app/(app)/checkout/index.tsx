@@ -1,14 +1,14 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-import styles from "../utils/styles";
+import styles from "@/src/utils/styles";
 
-const SecretPage = () => {
+const CheckoutScreen = () => {
   return (
     <View style={styles.centerView}>
-      <Text>SecretPage</Text>
+      <Text>CheckoutScreen</Text>
     </View>
   );
 };
 
-export default SecretPage;
+export default CheckoutScreen;
